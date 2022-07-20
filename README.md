@@ -11,10 +11,10 @@ A Real-Time chat application with multiple custom rooms
 
 ## Preview
 Join/Sign Up Page
-![Join](https://github.com/Shubhobroto/Chat-app/blob/master/Readme/chatapp1.jpg)
+![Join](https://github.com/Shubhobroto/Real-Time-Chat-App/blob/master/Readme/chatapp1.jpg)
 
 Auto Scroll down on spamming of messages
-![Main](https://github.com/Shubhobroto/Chat-app/blob/master/Readme/chatapp2.jpg)
+![Main](https://github.com/Shubhobroto/Real-Time-Chat-App/blob/master/Readme/chatapp2.jpg)
 
 
 ## Local Setup & Available Scripts
