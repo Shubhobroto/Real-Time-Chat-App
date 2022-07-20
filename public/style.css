@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: yellow;
+    font-family: 'Roboto', sans-serif;
+}
+section.chat__section {
+    width: 800px;
+    max-width: 90%;
+    background: #fff;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-radius: 25px;
+}
+.brand {
+    padding: 20px;
+    background: #ff0000;
+    display: flex;
+    align-items: center;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+}
+.brand h1 {
+    text-transform: uppercase;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    margin-left: 10px;
+    
+}
+.message__area{
+    height: 500px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding-top: 40px;
+    
+}
+textarea {
+    width: 100%;
+    border: none;
+    padding: 20px;
+    font-size: 16px;
+    outline: none;
+    background: #FBFBFB;
+    border-radius: 25px;
+}
+.send-message{
+    display:flex;
+    background: #FBFBFB;
+}
+.send-button img{
+    float: right;
+    margin: 5px;
+}
+.message {
+    padding: 20px; 
+    border-radius: 4px; 
+    margin-bottom: 40px;
+    max-width: 300px;
+    position: relative;
+}
+.incoming {
+    background: yellow;
+    color: rgb(0, 0, 0);  
+    border-radius: 20px;
+}
+.outgoing {
+    background: rgb(247, 247, 244);
+    color: black;
+    margin-left: auto;
+    border-radius: 20px;
+}
+.message h4 {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+}
