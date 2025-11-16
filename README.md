@@ -6,7 +6,7 @@ A Real-Time chat application with multiple custom rooms
 1. Sockets.io - Used to implement the real-time functionalities by sending triggering and monitoring events on a topic-subscription based model.
 2. NodeJs - Used as asynchronous event-driven JavaScript runtime.
 
-### Live Demo : https://shubhochatapp.herokuapp.com/
+### Live Demo : https://real-time-chat-app-862s.onrender.com/
 
 
 ## Preview
