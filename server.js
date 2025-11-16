@@ -1,34 +1,40 @@
-const express = require('express')
-const app = express()
-const http = require('http').createServer(app)
+const express = require('express');
+const app = express();
+const http = require('http').createServer(app);
 
-const PORT = process.env.PORT || 3000
+// Dynamic PORT for Render/Heroku/etc
+const PORT = process.env.PORT || 3000;
 
-http.listen(PORT, () => {
-    console.log(`Listening on port ${PORT}`)
-})
-
-app.use(express.static(__dirname + '/public'))
+// Serve static files
+app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html')
-})
+    res.sendFile(__dirname + '/index.html');
+});
 
-// Socket 
-const io = require('socket.io')(http)
+// Socket.io setup
+const io = require('socket.io')(http, {
+    cors: {
+        origin: "*",
+    }
+});
 
 io.on('connection', (socket) => {
-    console.log('Connected...');
-    let na="";
-    socket.on('message', (msg) => {
-        socket.broadcast.emit('message', msg)
-    })
+    console.log('A user connected');
 
+    // When new user joins
     socket.on("new-user-joined", (name) => {
-        console.log(name);
-        na=name;
-    })
+        console.log("User joined:", name);
+        socket.broadcast.emit("user-joined", name);
+    });
 
-    socket.broadcast.emit("user-joined", na);
+    // When a message is sent
+    socket.on('message', (msg) => {
+        socket.broadcast.emit('message', msg);
+    });
+});
 
-})
+// Start server
+http.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
